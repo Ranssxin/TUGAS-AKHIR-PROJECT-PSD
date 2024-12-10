@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unindra</title>
+    <style>
+        body, h1 {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image: linear-gradient(to right, rgba(0, 242, 96, 0.3), rgba(33, 140, 247, 0.3));
+            color: white;
+            font-size: 3em;
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .atas {
+            margin: 50px auto;
+            width: 400px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+        }
+
+        .video-bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            min-height: 100%;
+            min-width: 100%;
+            z-index: -1;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 1em;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #2196F3;
+            color: white;
+            font-size: 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <div>
+            <h1>Universitas Indraprasta PGRI</h1>
+            <h1>(Unindra)</h1>
+            <h6><i><marquee>Jl. Nangka No. 58, Tanjung Barat</marquee></i></h6>
+        </div>
+  
+        <video class="video-bg" src="videobg.mp4" autoplay muted loop></video>
+    </div>
+
+    <div class="atas">
+        <form action="/submit-form" method="POST">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="Nama" size="20" required>
+
+            <label for="alamat">Alamat:</label>
+            <textarea id="alamat" name="Alamat" rows="5" cols="45" wrap="soft" required></textarea>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="Email" required>
+
+            <label for="phone">No. Telepon:</label>
+            <input type="tel" id="phone" name="Telepon" pattern="[0-9]{10,13}" placeholder="Contoh: 081234567890" required>
+
+            <input type="submit" value="Kirim">
+        </form>
+    </div>
+</body>
+</html>
